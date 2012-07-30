@@ -809,16 +809,17 @@ containing a value of this type.
         public static final int abs__tab_selected_pressed_holo=0x7f020053;
         public static final int abs__tab_unselected_pressed_holo=0x7f020054;
         public static final int copy=0x7f020055;
-        public static final int ic_action_search=0x7f020056;
-        public static final int ic_launcher=0x7f020057;
-        public static final int ic_refresh=0x7f020058;
-        public static final int launcher_icon=0x7f020059;
-        public static final int nav_bar=0x7f02005a;
-        public static final int qr_code=0x7f02005b;
-        public static final int sablier=0x7f02005c;
-        public static final int share_via_barcode=0x7f02005d;
-        public static final int shopper_icon=0x7f02005e;
-        public static final int wooden_texture=0x7f02005f;
+        public static final int divider2=0x7f020056;
+        public static final int ic_action_search=0x7f020057;
+        public static final int ic_launcher=0x7f020058;
+        public static final int ic_refresh=0x7f020059;
+        public static final int launcher_icon=0x7f02005a;
+        public static final int nav_bar=0x7f02005b;
+        public static final int qr_code=0x7f02005c;
+        public static final int sablier=0x7f02005d;
+        public static final int share_via_barcode=0x7f02005e;
+        public static final int shopper_icon=0x7f02005f;
+        public static final int wooden_texture=0x7f020060;
     }
     public static final class id {
         public static final int LinearLayout1=0x7f080031;

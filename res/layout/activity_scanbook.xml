@@ -43,7 +43,8 @@
             android:layout_height="288dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_weight="0.30" >
+            android:layout_weight="0.30" 
+            android:divider="@drawable/divider2" >
 
         </ListView>
     </LinearLayout>
