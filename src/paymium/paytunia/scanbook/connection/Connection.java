@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -119,7 +120,14 @@ public class Connection
 		{
 			Wallet a = gson.fromJson(response, Wallet.class);
 			
-			return a;
+			Wallet b = new Wallet();
+			
+			b.setAddress(address);
+			b.setBalance(a.getBalance().divide(new BigDecimal(Math.pow(10, 8))));
+			b.setTotal_received(a.getTotal_received().divide(new BigDecimal(Math.pow(10, 8))));
+			b.setTotal_sent(a.getTotal_sent().divide(new BigDecimal(Math.pow(10, 8))));
+			
+			return b;
 		}
 		else
 		{

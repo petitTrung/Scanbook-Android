@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/wooden_texture"
     android:orientation="vertical" >
-
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,6 +47,7 @@
             android:divider="@drawable/divider2" >
 
         </ListView>
+        
     </LinearLayout>
 
     <LinearLayout
@@ -57,6 +58,7 @@
         android:background="@drawable/nav_bar" >
 
         <LinearLayout
+            android:id="@+id/layout_scan"
             android:layout_width="150dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
@@ -68,7 +70,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/qr_code" /><TextView
+                android:src="@drawable/qr_code" />
+            
+            
+            
+            <TextView
                 android:id="@+id/scan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -79,6 +85,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_paste"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"

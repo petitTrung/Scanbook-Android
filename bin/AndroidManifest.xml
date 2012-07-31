@@ -7,6 +7,9 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="15" />
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -14,13 +17,49 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".Scanbook"
-            android:label="@string/title_activity_scanbook" >
+            android:label="@string/title_activity_scanbook"
+            android:theme="@style/Theme.Sherlock">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity 
+            android:name="com.google.zxing.client.android.CaptureActivity"
+	        android:screenOrientation="landscape"
+	        android:configChanges="orientation|keyboardHidden"
+	        android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+	        android:windowSoftInputMode="stateAlwaysHidden">
+          	<intent-filter>
+		        <action android:name="com.google.zxing.client.android.SCAN"/>
+		        <category android:name="android.intent.category.DEFAULT"/>
+          	</intent-filter>        
+		</activity>
+		
+		<activity android:name="com.google.zxing.client.android.PreferencesActivity"
+              	  android:label="@string/preferences_name">
+    	</activity>
+    	
+    	<activity android:name="com.google.zxing.client.android.HelpActivity"
+              	  android:screenOrientation="user">
+      			<intent-filter>
+			        <action android:name="android.intent.action.VIEW"/>
+			        <category android:name="android.intent.category.DEFAULT"/>
+      			</intent-filter>
+    	</activity>
+    	
+    	<activity android:name="com.google.zxing.client.android.share.ShareActivity"
+	              android:label="@string/share_name"
+	              android:screenOrientation="user"
+	              android:theme="@android:style/Theme.Light">
+      			<intent-filter>
+			        <action android:name="com.google.zxing.client.android.SHARE"/>
+			        <category android:name="android.intent.category.DEFAULT"/>
+      			</intent-filter>
+    	</activity>
+           
     </application>
 
 </manifest>

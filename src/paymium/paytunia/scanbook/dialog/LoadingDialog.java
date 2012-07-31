@@ -1,5 +1,7 @@
-package paymium.paytunia.scanbook;
+package paymium.paytunia.scanbook.dialog;
 
+import paymium.paytunia.scanbook.R;
+import paymium.paytunia.scanbook.R.drawable;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.os.Bundle;
