@@ -20,14 +20,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Short Address" />
+            android:text="Short Address" 
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"/>
 
         <TextView
             android:id="@+id/full_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Full Address" />
+            android:text="Full Address" 
+            android:textColor="@android:color/black"/>
 
     </LinearLayout>
 

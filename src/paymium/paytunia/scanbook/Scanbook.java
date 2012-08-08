@@ -2,7 +2,6 @@ package paymium.paytunia.scanbook;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 import paymium.paytunia.scanbook.connection.Connection;
 import paymium.paytunia.scanbook.connection.ConnectionNotInitializedException;
@@ -26,6 +25,7 @@ import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 
+@SuppressWarnings("deprecation")
 public class Scanbook extends SherlockFragmentActivity implements OnClickListener 
 {
 
@@ -47,7 +47,7 @@ public class Scanbook extends SherlockFragmentActivity implements OnClickListene
     @Override
     public void onCreate(Bundle savedInstanceState) 
     {
-    	setTheme(R.style.Theme_Sherlock); //Used for theme switching in samples
+    	setTheme(R.style.Theme_Sherlock);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanbook);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -267,6 +267,13 @@ public class Scanbook extends SherlockFragmentActivity implements OnClickListene
     		refresh.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
     	}
     	
+    	MenuItem list_addresses = menu.add(1, 1, 1, "Addresses");
+    	{
+    		list_addresses.setIcon(R.drawable.ic_list);
+    		list_addresses.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+    	}
+    	
+    	
     	return true;
     }
     
@@ -278,7 +285,8 @@ public class Scanbook extends SherlockFragmentActivity implements OnClickListene
     
     public boolean MenuChoice(MenuItem item)
     {
-    	System.out.println(address + "heheheh");
+
+    	
     	if (item.getItemId() == 0)
     	{
     		if (address != null)
@@ -289,6 +297,12 @@ public class Scanbook extends SherlockFragmentActivity implements OnClickListene
         		
         		return true;
         	}
+    	}
+    	else if (item.getItemId() == 1)
+    	{
+    		Intent intent = new Intent(this,AddressList.class);
+    		startActivity(intent);
+    		return true;
     	}
 
     	return false;

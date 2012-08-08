@@ -26,6 +26,10 @@
             </intent-filter>
         </activity>
         
+        <activity android:name=".AddressList"
+            android:theme="@style/Theme.Sherlock">
+        </activity>
+        
         <activity 
             android:name="com.google.zxing.client.android.CaptureActivity"
 	        android:screenOrientation="landscape"
