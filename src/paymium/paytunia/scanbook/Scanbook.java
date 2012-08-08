@@ -257,12 +257,21 @@ public class Scanbook extends SherlockFragmentActivity implements OnClickListene
 			super.onPostExecute(result);
 			this.loadingDialog.dismiss();
 			
-			if (this.wallet.getAddress().length() > 0)
+			if (this.wallet.getBalance() != null)
 			{
 				setAddress(this.address);
 				descriptionAdapter.setWallet(wallet);
-				db.addWallet(wallet);
+				if (db.verifyBeforeAdding(wallet))
+				{
+					db.updateWallet(wallet);
+				}
+				else
+				{
+					db.addWallet(wallet);
+				}
 			}
+			
+			System.out.println(db.getAllWallets().toString());
 			
 		}
     	
