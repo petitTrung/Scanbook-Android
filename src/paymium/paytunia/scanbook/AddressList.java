@@ -3,6 +3,7 @@ package paymium.paytunia.scanbook;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 
+import paymium.paytunia.scanbook.R;
 import paymium.paytunia.scanbook.database.AddressListHandler;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
