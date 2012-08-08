@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import paymium.paytunia.scanbook.connection.Connection;
 import paymium.paytunia.scanbook.connection.ConnectionNotInitializedException;
 import paymium.paytunia.scanbook.connection.DescriptionAdapter;
+import paymium.paytunia.scanbook.database.AddressListHandler;
 import paymium.paytunia.scanbook.dialog.AlertingDialogOneButton;
 import paymium.paytunia.scanbook.dialog.LoadingDialog;
 import android.content.Intent;
@@ -43,6 +44,8 @@ public class Scanbook extends SherlockFragmentActivity implements OnClickListene
 	
 	private String address;
 	
+	private AddressListHandler db;
+	
 	
     @Override
     public void onCreate(Bundle savedInstanceState) 
@@ -74,6 +77,8 @@ public class Scanbook extends SherlockFragmentActivity implements OnClickListene
         this.paste.setOnClickListener(this);
         
         this.connection = Connection.getInstance().initialize();
+        
+        this.db = new AddressListHandler(this);
     }
 
     private ArrayList<String> addressBitcoin;
@@ -250,10 +255,15 @@ public class Scanbook extends SherlockFragmentActivity implements OnClickListene
 		protected void onPostExecute(String result) 
 		{
 			super.onPostExecute(result);
-			//dismissDialog(DIALOG_GETTING_WALLET_PROGRESS);
 			this.loadingDialog.dismiss();
-			setAddress(this.address);
-			descriptionAdapter.setWallet(wallet);
+			
+			if (this.wallet.getAddress().length() > 0)
+			{
+				setAddress(this.address);
+				descriptionAdapter.setWallet(wallet);
+				db.addWallet(wallet);
+			}
+			
 		}
     	
     }
